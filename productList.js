@@ -69,7 +69,6 @@ function displayData(data) {
 
 }
 
-// Function to create checkboxes from JSON data
 
 let categoryData = [
     { "id": 1, "name": "men's clothing", "isClicked": false },
@@ -80,7 +79,7 @@ let categoryData = [
 
 function createCheckboxesCategory(data) {
     const container = document.getElementById('checkbox-container');
-    container.innerHTML = ''; // Clear existing content
+    container.innerHTML = ''; 
 
     data.forEach(category => {
         const checkboxDiv = document.createElement('div');
@@ -89,7 +88,7 @@ function createCheckboxesCategory(data) {
                 <input type="checkbox" value="${category.id}" onclick="categoryCheckboxClicked(this)" ${category.isClicked ? 'checked' : ''} /> ${category.name}
             </label>
         `;
-        container.appendChild(checkboxDiv); // Append checkbox to container
+        container.appendChild(checkboxDiv); 
     });
 }
 
@@ -178,7 +177,7 @@ function getFilterData() {
 let orderSelectedValue = ''
 const dropdown = document.getElementById('shortingDropdown');
 dropdown.addEventListener('change', function () {
-    const selectedValue = dropdown.value; // Get the selected value
+    const selectedValue = dropdown.value;
     orderSelectedValue = selectedValue;
     sortingOptionsSelected()
 });
@@ -216,7 +215,7 @@ availabilityData = [{ 'id': 1, 'name': 'Include out of stock', "isClicked": fals
 
 function createCheckboxAvailability(data) {
     const container = document.getElementById('availability-checkbox-container');
-    container.innerHTML = ''; // Clear existing content
+    container.innerHTML = ''; 
 
     data.forEach(availability => {
         const checkboxDiv = document.createElement('div');
@@ -225,7 +224,7 @@ function createCheckboxAvailability(data) {
                 <input type="checkbox" value="${availability.id}" ${availability.isClicked ? 'checked' : ''} onclick="availabilityCheckboxClicked(this)" /> ${availability.name}
             </label>
         `;
-        container.appendChild(checkboxDiv); // Append checkbox to container
+        container.appendChild(checkboxDiv); 
     });
 }
 
@@ -301,18 +300,18 @@ function loadMoreProduct() {
 
 
 document.getElementById('open-popup').addEventListener('click', function () {
-    document.getElementById('popup').style.display = 'block'; // Show the popup
+    document.getElementById('popup').style.display = 'block'; 
     createCheckboxesCategoryPopup(categoryData);
     createCheckboxesPricRangPopup(priceRange);
     createCheckboxAvailabilityPopup(availabilityData);
 });
 
 document.getElementById('close-popup').addEventListener('click', function () {
-    document.getElementById('popup').style.display = 'none'; // Hide the popup
+    document.getElementById('popup').style.display = 'none'; 
 });
 
 document.getElementById('close-popup-btn').addEventListener('click', function () {
-    document.getElementById('popup').style.display = 'none'; // Hide the popup
+    document.getElementById('popup').style.display = 'none'; 
 });
 
 // Close the popup if the user clicks anywhere outside the popup content
@@ -325,7 +324,7 @@ window.addEventListener('click', function (event) {
 
 function createCheckboxesCategoryPopup(data) {
     const container = document.getElementById('checkbox-container-popup');
-    container.innerHTML = ''; // Clear existing content
+    container.innerHTML = ''; 
 
     data.forEach(category => {
         const checkboxDiv = document.createElement('div');
@@ -334,13 +333,13 @@ function createCheckboxesCategoryPopup(data) {
                 <input type="checkbox" value="${category.id}" onclick="categoryCheckboxClicked(this)" ${category.isClicked ? 'checked' : ''} /> ${category.name}
             </label>
         `;
-        container.appendChild(checkboxDiv); // Append checkbox to container
+        container.appendChild(checkboxDiv); 
     });
 }
 
 function createCheckboxesPricRangPopup(data) {
     const container = document.getElementById('price-checkbox-container-popup');
-    container.innerHTML = ''; // Clear existing content
+    container.innerHTML = ''; 
 
     data.forEach(priceRange => {
         const checkboxDiv = document.createElement('div');
@@ -349,13 +348,13 @@ function createCheckboxesPricRangPopup(data) {
                 <input type="checkbox" value="${priceRange.id}" ${priceRange.isClicked ? 'checked' : ''} onclick="pricRangCheckboxClicked(this)" /> ${priceRange.name}
             </label>
         `;
-        container.appendChild(checkboxDiv); // Append checkbox to container
+        container.appendChild(checkboxDiv); 
     });
 }
 
 function createCheckboxAvailabilityPopup(data) {
     const container = document.getElementById('availability-checkbox-container-popup');
-    container.innerHTML = ''; // Clear existing content
+    container.innerHTML = ''; 
 
     data.forEach(availability => {
         const checkboxDiv = document.createElement('div');
@@ -364,7 +363,7 @@ function createCheckboxAvailabilityPopup(data) {
                 <input type="checkbox" value="${availability.id}" ${availability.isClicked ? 'checked' : ''} onclick="availabilityCheckboxClicked(this)" /> ${availability.name}
             </label>
         `;
-        container.appendChild(checkboxDiv); // Append checkbox to container
+        container.appendChild(checkboxDiv); 
     });
 }
 
