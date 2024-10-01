@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="productList.css">
+
+</head>
+
+<body>
+    <section>
+        <header class="header">
+            <div class="menu-toggle" id="mobile-menu">
+                &#9776; <!-- Hamburger Icon -->
+            </div>
+            <div class="logo">VENIA</div>
+            <nav class="nav">
+                <ul>
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Women</a></li>
+                    <li><a href="#">Men</a></li>
+                    <li><a href="#">Smart Gear</a></li>
+                    <li><a href="#">Accessories</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon" id="cart-icon">
+                <i class="fas fa-shopping-cart"></i> <!-- Add to Cart Icon -->
+            </div>
+        </header>
+        <div class="loader-overlay" id="loader">
+            <div class="loader"></div>
+        </div>
+    </section>
+    <section>
+        <div>
+            <div class="background-image">
+                <div class="bg-text">
+                    <p>Men's<br><span class="under-line">Outerwear</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <div class="input-container">
+                    <input type="text" placeholder="Search..." class="input-field" id="searchInput">
+                    <span class="search-icon">🔍</span> <!-- Search icon -->
+                </div>
+            </div>
+            <div class="container-pos">
+                <div class="column left">
+                    <div>
+                        <p>Clothing / Women’s / Outerwear</p>
+                    </div>
+                    <div>
+                        <p>Filters</p>
+                        <hr>
+                        <div>
+                            <p>Categories</p>
+                            <div id="checkbox-container"></div>
+                        </div>
+                        <div>
+                            <p>Price Range</p>
+                            <div id="price-checkbox-container"></div>
+                        </div>
+                        <div>
+                            <p>Availability</p>
+                            <div id="availability-checkbox-container"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column right" id="noData">
+                    <div class="continerlf">
+                        <div>
+                            <p id="productLen"></p>
+                        </div>
+                        <div>
+                            <select class="dropdown" id="shortingDropdown">
+                                <option selected value="" disabled>Sort By price</option>
+                                <option value="Ascending">Ascending Order</option>
+                                <option value="Descending">Descending Order</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="in-mobile">
+                        <div class="category-name">
+                            <p>Clothing / Women’s / Outerwear</p>
+                        </div>
+                        <div class="icon-mod">
+                            <button class="button-change" id="open-popup">
+                                <i class="fas fa-filter" style="margin-right: 8px;"></i>
+                                <span class="text-format">Filter Results</span>
+                            </button>
+                            <button class="button-change" onclick="filterProduct()">
+                                <i class="fas fa-sort" style="margin-right: 8px;"></i>
+                                <span class="text-format">Sort Products</span>
+                            </button>
+                        </div>
+                        <div>
+                            <p id="productLenMob"></p>
+                        </div>
+                    </div>
+                    <div class="grid-container" id="content">
+                    </div>
+                    <div class="btnClass">
+                        <button class="btn" onclick="loadMoreProduct()">Load more</button>
+                    </div>
+                </div>
+                <div id="noDataTemplate">
+                    <p class="no-data">No product found.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="line"></div>
+        <div class="footer">
+            <div class="column">
+                <h3>Account</h3>
+                <ul>
+                    <li><a>Sign In</a></li>
+                    <li><a>Register</a></li>
+                    <li><a>Order Status</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3>About Us</h3>
+                <ul>
+                    <li><a>Our Story</a></li>
+                    <li><a>Careers</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3>Help</h3>
+                <ul>
+                    <li><a>Contact Us</a></li>
+                    <li><a>Order Status</a></li>
+                    <li><a>Returns</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3>Follow Us!</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur<br> adipiscing elit, sed do eiusmod tempor<br> incididunt ut
+                    labore et dolore.</p>
+                <a><i class="fab fa-instagram icon"></i></a>
+                <a class="icon-css"><i class="fab fa-facebook icon"></i></a>
+                <a class="icon-css"><i class="fab fa-twitter icon"></i></a>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="info">
+            <div class="company-info">
+                <p>VENIA</p>
+            </div>
+            <div class="company-name">
+                <p>&copy; Company Name Address Ave, City Name, State ZIP</p>
+            </div>
+            <div class="legal">
+                <a href="">Terms of Use </a>&nbsp;<a href="">Privacy Policy</a>
+            </div>
+        </div>
+    </section>
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <div class="popup-heading">
+                <span id="close-popup" class="close">&times;</span>
+                <h4>Filters</h4>
+            </div>
+            <div class="popup-filter">
+                <div>
+                    <h4 class="clear-text" onclick="clearAll()">clear All</h4>
+                </div>
+                <div class="line"></div>
+                <div class="align-data">
+                    <h5>Categories</h5>
+                    <div id="checkbox-container-popup"></div>
+                </div>
+                <div class="line"></div>
+                <div class="align-data">
+                    <h5>Price Range</h5>
+                    <div id="price-checkbox-container-popup"></div>
+                </div>
+                <div class="line"></div>
+                <div class="align-data">
+                    <h5>Availability</h5>
+                    <div id="availability-checkbox-container-popup"></div>
+                </div>
+                <div class="line"></div>
+            </div>
+            <div class="popup-btn-align" id="close-popup-btn">
+                <button class="popup-btn">SEE RESULTS</button>
+            </div>
+        </div>
+    </div>
+    <script src="productList.js"></script>
+</body>
+
+</html>
