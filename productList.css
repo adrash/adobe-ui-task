@@ -9,11 +9,8 @@
 
 .nav ul li.active a {
     font-weight: bold;
-    /* Make the active link bold */
     text-decoration: underline;
-    /* Add underline */
     text-underline-offset: 4px;
-    /* Optional: Adjust space between text and underline */
 }
 
 .logo {
@@ -23,10 +20,8 @@
 /* Centering the navigation */
 .nav {
     flex-grow: 1;
-    /* Allow nav to grow and take available space */
     display: flex;
     justify-content: center;
-    /* Center the items */
 }
 
 .nav ul {
@@ -53,8 +48,6 @@
 
 
 
-/* Media Queries for Responsive Design */
-
 
 .content {
     padding: 20px;
@@ -63,36 +56,24 @@
 
 .loader-overlay {
     display: none;
-    /* Hidden by default */
     position: fixed;
-    /* Fixed positioning */
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background-color: rgba(255, 255, 255, 0.8);
-    /* Semi-transparent background */
     justify-content: center;
-    /* Center the loader */
     align-items: center;
-    /* Center the loader */
     z-index: 1000;
-    /* Ensure it's on top */
 }
 
 .loader {
     border: 8px solid #f3f3f3;
-    /* Light border */
     border-top: 8px solid #1363DF;
-    /* Blue color for the spinner */
     border-radius: 50%;
-    /* Circular shape */
     width: 60px;
-    /* Width of the loader */
     height: 60px;
-    /* Height of the loader */
     animation: spin 1s linear infinite;
-    /* Animation */
 }
 
 .footer {
@@ -142,13 +123,9 @@
 
 .background-image {
     background-image: url('assets/banner.png');
-    /* Replace with your image URL */
     background-size: cover;
-    /* Cover the entire area */
     height: 200px;
-    /* Full height of the viewport */
     color: white;
-    /* Text color */
 }
 
 .bg-text {
@@ -167,21 +144,17 @@
 
 .container-pos {
     width: 100%;
-    /* Full width */
     overflow: auto;
-    /* Clear floats */
 }
 
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* grid-template-columns: auto auto auto; */
     padding: 10px;
 }
 
 .grid-item {
     background-color: #E5E5E7;
-    /* border: 1px solid rgba(0, 0, 0, 0.8); */
     padding: 20px;
 }
 
@@ -240,32 +213,20 @@
 
 .input-field {
     width: 100%;
-    /* Full width */
     padding: 10px 40px 10px 40px;
-    /* Add padding for text and icon */
     border: 1px solid #ccc;
-    /* Border */
     border-radius: 4px;
-    /* Rounded corners */
     font-size: 16px;
-    /* Font size */
 }
 
 .search-icon {
     position: absolute;
-    /* Positioning icon */
     left: 10px;
-    /* Position from the left */
     top: 50%;
-    /* Center vertically */
     transform: translateY(-50%);
-    /* Adjust for centering */
     font-size: 18px;
-    /* Icon size */
     color: #aaa;
-    /* Icon color */
     pointer-events: none;
-    /* Ignore pointer events */
 }
 
 .contant-width {
@@ -303,19 +264,6 @@
     }
 }
 
-/* Responsive adjustments */
-/* @media (max-width: 600px) {
-    .loader { */
-/* width: 40px; */
-/* Smaller size on small screens */
-/* height: 40px; */
-/* Smaller size on small screens */
-/* }
-
-    .logo {
-        margin-left: 100px;
-    }
-} */
 
 
 @media (max-width: 600px) {
@@ -326,7 +274,6 @@
         background-color: #1363DF;
         position: absolute;
         top: 60px;
-        /* Adjust as needed */
         left: 0;
         z-index: 1;
     }
@@ -460,19 +407,13 @@
 
     .popup {
         display: none;
-        /* Hidden by default */
         position: fixed;
-        /* Stay in place */
         z-index: 1000;
-        /* Sit on top */
         left: 0;
         top: 0;
         width: 100%;
-        /* Full width */
         height: 100%;
-        /* Full height */
         background-color: #8c8c8c;
-        /* Black background with transparency */
     }
 
     .popup-content {
@@ -488,14 +429,10 @@
 
     .close {
         cursor: pointer;
-        /* Pointer cursor on hover */
         font-size: 50px;
-        /* Close icon size */
         position: absolute;
-        /* Position close icon */
         top: 10px;
         right: 15px;
-        /* Adjust position */
     }
 
     .popup-heading {
